@@ -1,0 +1,156 @@
+;==========================================================
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;==========================================================
+
+[color]
+
+trans = #00000000
+white = #FFFFFF
+black = #000000
+
+bg = #1F1F1F
+fg = #FFFFFF
+fg-alt = #A9ABB0
+
+acolor = #1e88e5
+curgent = #e53935
+coccupied = #43a047
+
+red = #e53935
+pink = #d81b60
+purple = #8e24aa
+deep-purple = #5e35b1
+indigo = #3949ab
+blue = #1e88e5
+light-blue = #039be5
+cyan = #00acc1
+teal = #00897b
+green = #43a047
+light-green = #7cb342
+lime = #c0ca33
+yellow = #fdd835
+amber = #ffb300
+orange = #fb8c00
+deep-orange = #f4511e
+brown = #6d4c41
+grey = #757575
+blue-gray = #546e7a
+;==========================================================
+;==========================================================
+;==========================================================
+[bar/main]
+monitor = eDP1
+width = 100%
+height = 25
+offset-x = 0%
+offset-y = 0%
+top = true
+fixed-center = false
+line-size = 2
+
+background = ${color.black}
+foreground = ${color.green}
+
+border-size = 1
+border-color = ${color.black}
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Fantasque Sans Mono:pixelsize=12;2"
+font-1 = "Material Design Icons:size=13;4"
+font-2 = "Material Icons:size=13;4"
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+modules-left = bspwm r1 r5 r15
+modules-right = getStatus 
+;==========================================================
+
+[bar/second]
+monitor = HDMI1
+width = 100%
+height = 20
+offset-x = 0%
+offset-y = 0%
+top = true
+fixed-center = false
+line-size = 2
+
+background = ${color.black}
+foreground = ${color.green}
+
+border-size = 1
+border-color = ${color.black}
+
+module-margin-left = 1
+module-margin-right = 1
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+font-0 = "Fantasque Sans Mono:pixelsize=12;2"
+font-1 = "Material Design Icons:size=13;4"
+font-2 = "Material Icons:size=13;4"
+
+modules-left = bspwm
+modules-right = getStatus
+
+;== Modules ========================================================
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+fuzzy-match = true
+
+label-separator = " |"
+label-separator-padding = 0
+label-separator-foreground = ${color.orange}
+
+label-empty-foreground = ${color.orange}
+
+label-focused-foreground = ${color.blue}
+
+;=;
+
+[module/getStatus]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/getStatus.sh
+interval = 0.1
+label = %output%
+
+;==;;==;
+
+[module/r1]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/setStatus1.sh
+interval = 1
+label = %output%
+
+;=;
+
+[module/r5]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/setStatus5.sh
+interval = 5
+label = %output%
+
+;=;
+
+[module/r15]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/setStatus15.sh
+interval = 15
+label = %output%
+
+;== EOF ========================================================
