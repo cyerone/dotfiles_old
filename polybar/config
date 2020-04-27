@@ -54,7 +54,7 @@ fixed-center = false
 line-size = 2
 
 background = ${color.black}
-foreground = ${color.green}
+foreground = ${color.blue}
 
 border-size = 1
 border-color = ${color.black}
@@ -70,7 +70,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 modules-left = bspwm r1 r5 r15
-modules-right = getStatus 
+modules-right = getStatus
 ;==========================================================
 
 [bar/second]
@@ -84,7 +84,7 @@ fixed-center = false
 line-size = 2
 
 background = ${color.black}
-foreground = ${color.green}
+foreground = ${color.blue}
 
 border-size = 1
 border-color = ${color.black}
@@ -115,11 +115,11 @@ fuzzy-match = true
 
 label-separator = " |"
 label-separator-padding = 0
-label-separator-foreground = ${color.orange}
+label-separator-foreground = ${color.lime}
 
-label-empty-foreground = ${color.orange}
+label-empty-foreground = ${color.white}
 
-label-focused-foreground = ${color.blue}
+label-focused-foreground = ${color.red}
 
 ;=;
 

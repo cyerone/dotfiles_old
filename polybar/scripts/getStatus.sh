@@ -14,5 +14,8 @@ memory=`cat ./scripts/Read/memory`
 #updated every 15s
 disc=`cat ./scripts/Read/disc`
 
-echo "$connection || $memory || $disc || $speakers  $microphone | $isDiscord || $brightness | $battery || $date"
+sep="%{F#c0ca33}|%{F-}"
+sepD="%{F#c0ca33}||%{F-}"
+
+echo -e " $connection $sep $memory $sepD $disc $sepD $speakers  $microphone $sep $isDiscord $sepD $brightness $sep $battery $sepD $date"
 

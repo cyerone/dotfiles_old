@@ -6,7 +6,7 @@ PercentageP=`upower -i $B | grep percentage | awk '{print $2}'`
 Percentage=${PercentageP::-1}
 
 if [ "$State" = "charging" ]; then
-	echo " $Percentage%" > ./scripts/Read/battery
+	echo "%{F#FFFFFF}%{F-} $Percentage%" > ./scripts/Read/battery
 else
   if [ "$Percentage" -lt "5" ]; then
     batI=''
@@ -31,6 +31,6 @@ else
   else
     batI=''
   fi
-  echo "$batI $Percentage%" > ./scripts/Read/battery
+  echo "%{F#FFFFFF}$batI%{F-} $Percentage%" > ./scripts/Read/battery
 fi
 

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo " `date "+%T"`  `date "+%D %A"`"
+echo "%{F#FFFFFF}%{F-} `date "+%T"` %{F#FFFFFF}%{F-} `date "+%D"` %{F#FFFFFF}`date "+%A"`%{F-}"

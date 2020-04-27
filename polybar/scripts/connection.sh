@@ -12,10 +12,10 @@ signal="${signalF::-4}"
 
 
 if [ "$ethStatus" == "UP" ]; then
-  echo "綾" > ./scripts/Read/connection
+  out="%{F#FFFFFF}綾%{F-}"
 else
   if [ "$wlStatus" == "DOWN" ]; then
-    echo "來" > ./scripts/Read/connection
+    out="%{F#FFFFFF}來%{F-}"
   else
     if [ "$signal" -lt "60" ]; then
       signalI="蠟"
@@ -28,7 +28,9 @@ else
     else
       signalI="冷"
     fi
-    echo -e "$signalI -$signal""dBm" > ./scripts/Read/connection
+    out="%{F#FFFFFF}$signalI%{F-} -$signal""dBm"
   fi
 fi
+
+echo "$out" > ./scripts/Read/connection
 
