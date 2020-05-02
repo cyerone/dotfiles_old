@@ -12,26 +12,21 @@ super + w
 	firefox
 super + e
 	thunar
+
+#
 super + shift + o
 	xfce4-clipman &
 super + shift + p
 	xfce4-screenshooter
-XF86AudioLowerVolume
-	pamixer -d 5
-XF86AudioRaiseVolume
-	pamixer -i 5
-XF86AudioMute
-	pamixer -t
-alt + XF86AudioRaiseVolume
-	pamixer --source 1 -i 5
-alt + XF86AudioLowerVolume
-	pamixer --source 1 -d 5
+
+{XF86AudioLowerVolume,XF86AudioRaiseVolume,XF86AudioMute}
+	pamixer {-d 5,-i 5,-t}
+alt + {XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pamixer --source 1 {-i 5,-d 5}
 XF86AudioMicMute
 	pamixer --source 1 -t
-XF86MonBrightnessUp
-	xbacklight +5
-XF86MonBrightnessDown
-	xbacklight -5
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+	xbacklight {+5,-5}
 super + Return
 	xfce4-terminal
 super + @space
