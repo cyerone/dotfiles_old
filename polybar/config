@@ -100,7 +100,7 @@ font-1 = "Material Design Icons:size=13;4"
 font-2 = "Material Icons:size=13;4"
 
 modules-left = bspwm
-modules-right = getStatus
+modules-right = getStatusLight
 
 ;== Modules ========================================================
 
@@ -143,7 +143,15 @@ label-focused-foreground = ${color.red}
 
 [module/getStatus]
 type = custom/script
-exec = $HOME/.config/polybar/scripts/getStatus.sh
+exec = $HOME/.config/polybar/scripts/getStatus.sh full
+interval = 0.1
+label = %output%
+
+;=;
+
+[module/getStatusLight]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/getStatus.sh light
 interval = 0.1
 label = %output%
 
