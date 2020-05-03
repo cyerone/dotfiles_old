@@ -12,7 +12,7 @@ signal="${signalF::-4}"
 
 
 if [ "$ethStatus" == "UP" ]; then
-  out="%{F#FFFFFF}綾%{F-}"
+  out="%{F#FFFFFF}%{F-}"
 else
   if [ "$wlStatus" == "DOWN" ]; then
     out="%{F#FFFFFF}來%{F-}"

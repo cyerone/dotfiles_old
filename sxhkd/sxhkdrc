@@ -13,7 +13,7 @@ super + w
 super + e
 	thunar
 
-#
+#to be repaired
 super + shift + o
 	xfce4-clipman &
 super + shift + p
