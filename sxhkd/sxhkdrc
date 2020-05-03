@@ -25,6 +25,10 @@ alt + {XF86AudioRaiseVolume,XF86AudioLowerVolume}
 	pamixer --source 1 {-i 5,-d 5}
 XF86AudioMicMute
 	pamixer --source 1 -t
+
+super + {XF86AudioLowerVolume,XF86AudioRaiseVolume,XF86AudioMute}
+	playerctl {previous,next,play-pause}
+
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
 	xbacklight {+5,-5}
 super + Return
