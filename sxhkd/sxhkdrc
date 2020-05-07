@@ -36,6 +36,9 @@ super + Return
 super + @space
 	dmenu_run -b -nf white -sb red  -sf white
 
+super + l
+	sh $HOME/.config/sxhkd/scripts/lockscreen.sh
+
 super + alt + b
 	bspc config window_gap $(($(bspc config window_gap)+7))
 super + alt + shift + b
