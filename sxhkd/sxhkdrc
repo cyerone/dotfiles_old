@@ -34,7 +34,7 @@ super + {XF86AudioLowerVolume,XF86AudioRaiseVolume,XF86AudioMute}
 super + Return
 	xfce4-terminal
 super + @space
-	dmenu_run -b -nf white -sb red  -sf white
+	dmenu_run -b -nb black -nf white -sb white -sf black -m 0 -fn "Fantasque Sans Mono:pixelsize=18"
 
 super + l
 	sh $HOME/.config/sxhkd/scripts/lockscreen.sh

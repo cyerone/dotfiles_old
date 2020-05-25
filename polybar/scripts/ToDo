@@ -1,0 +1,14 @@
+# Bluetooth & Bluetooth/Audio
+
+using bluetoothctl to determin if
+> device is connected or not
+  > my BT mouse
+  > AT headphones
+  > Phil.. headphones
+  > JBL_GO
+    > Blue/white icon
+> connect / disconnect device (if disconnect/connected)
+
+> 1|2|3|4 audio presets.
+  >pactl set-card-profile 0 output:(...)
+

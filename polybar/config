@@ -69,8 +69,37 @@ font-2 = "Material Icons:size=13;4"
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-modules-left = bspwm r1 r5 r15
+modules-left = bspwm
 modules-right = getStatus
+;==========================================================
+[bar/main_bottom]
+monitor = eDP1
+width = 100%
+height = 25
+offset-x = 0%
+offset-y = 0%
+bottom = true
+fixed-center = false
+line-size = 2
+
+background = ${color.black}
+foreground = ${color.blue}
+
+border-size = 1
+border-color = ${color.black}
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Fantasque Sans Mono:pixelsize=12;2"
+font-1 = "Material Design Icons:size=13;4"
+font-2 = "Material Icons:size=13;4"
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+modules-left = getStatusBottomLeft r1 r5 r15
+modules-right = getStatusBottom
 ;==========================================================
 
 [bar/second]
@@ -100,7 +129,7 @@ font-1 = "Material Design Icons:size=13;4"
 font-2 = "Material Icons:size=13;4"
 
 modules-left = bspwm
-modules-right = getStatusLight
+modules-right = getStatus
 
 ;== Modules ========================================================
 
@@ -143,15 +172,22 @@ label-focused-foreground = ${color.red}
 
 [module/getStatus]
 type = custom/script
-exec = $HOME/.config/polybar/scripts/getStatus.sh full
+exec = $HOME/.config/polybar/scripts/getStatus.sh top
 interval = 0.1
 label = %output%
 
 ;=;
 
-[module/getStatusLight]
+[module/getStatusBottom]
 type = custom/script
-exec = $HOME/.config/polybar/scripts/getStatus.sh light
+exec = $HOME/.config/polybar/scripts/getStatus.sh bottom
+interval = 0.1
+label = %output%
+;=;
+
+[module/getStatusBottomLeft]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/getStatus.sh bottomleft
 interval = 0.1
 label = %output%
 
