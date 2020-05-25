@@ -6,6 +6,8 @@ prev="playerctl previous"
 run="spotify"
 stop="killall spotify"
 
+status=`playerctl status`
+
 PIDS=`pidof spotify | gawk '{print NF}'`
 
 if [ "$PIDS" == '' ]; then
@@ -18,10 +20,10 @@ if [ "$PIDS" -gt "3" ] ;  then
   albumArtist=` grep 'albumArtist' <<< "$meta" | awk '{$1=""}{$2=""}{print $0}' | cut -c 3-`
   fname="$albumArtist - $title"
   out="%{A2:$stop:}%{A1:$toggle:}%{A4:$next:}%{A5:$prev:}$fname%{A}%{A}%{A}%{A}"
-else
-  out=""
 fi
 
+if [ "$status" == "Playing" ]; then
+  out="%{F#FFFFFF}$out%{F-}"
+fi
 
-
-echo "%{F#FFFFFF}$out%{F-}" > ./scripts/Read/player
+echo "$out" > ./scripts/Read/player

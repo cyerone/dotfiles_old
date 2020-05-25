@@ -20,13 +20,16 @@ disc=`cat ./scripts/Read/disc`
 sep="%{F#5e35b1}|%{F-}"
 sepD="%{F#5e35b1}||%{F-}"
 
+invader="%{F#FF8C00}ﮥ%{F-}"
+bomb="%{F#DC143C}%{F-}"
+
 if [ "$1" == "top" ]; then
 
-  echo -e "$sepD $speakers  $microphone $sep $isDiscord $sepD $brightness $sep $battery $sepD $date  "
+  echo -e "$speakers  $microphone $sep $isDiscord $sepD $brightness $sep $battery $sepD $date $sepD $bomb "
 
 elif [ "$1" == "bottom" ]; then
 
-  echo -e "$sepD $bluetooth $sepD $audioPresets $sepD $memory $sepD $disc "
+  echo -e "$bluetooth $sepD $audioPresets $sepD $memory $sepD $disc $sepD $invader "
 
 elif [ "$1" == "bottomleft" ]; then
 

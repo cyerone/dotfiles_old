@@ -45,10 +45,10 @@ source=`pactl info | grep "Default Source" | awk '{print $3}'`
 
 ### PRESETS
 
-i1=""
-i2=""
-i3=""
-i4=""
+i1=""
+i2=""
+i3=""
+i4=""
 
 set1="sh /home/jakub/Git/dotfiles/polybar/scripts/setAudioIO.sh 1 2>/dev/null"
 set2="sh /home/jakub/Git/dotfiles/polybar/scripts/setAudioIO.sh 2 2>/dev/null"

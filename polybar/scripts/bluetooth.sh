@@ -20,8 +20,6 @@ disconnect2="bluetoothctl disconnect 00\:11\:67\:2D\:78\:E4"
 disconnect3="bluetoothctl disconnect 70\:99\:1C\:41\:25\:B6"
 disconnect4="echo 1"
 
-#setColor
-
 if [ "$isDev1" == "1" ]; then
   dev1="%{F#FFFFFF}$dev1%{F-}"
 fi
