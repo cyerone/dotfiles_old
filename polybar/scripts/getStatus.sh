@@ -21,11 +21,14 @@ sep="%{F#5e35b1}|%{F-}"
 sepD="%{F#5e35b1}||%{F-}"
 
 invader="%{F#FF8C00}ﮥ%{F-}"
-bomb="%{F#DC143C}%{F-}"
+
+shutdown_dialog="sh /home/jakub/Git/dotfiles/polybar/scripts/dmenu_scripts/shutdown_dialog.sh"
+
+bomb="%{F#DC143C}%{A1:$shutdown_dialog:}%{A}%{F-}"
 
 if [ "$1" == "top" ]; then
 
-  echo -e "$speakers  $microphone $sep $isDiscord $sepD $brightness $sep $battery $sepD $date $sepD $bomb "
+  echo -e "$speakers  $microphone $sepD $connection $sepD $brightness $sep $battery $sepD $date $sepD $bomb "
 
 elif [ "$1" == "bottom" ]; then
 

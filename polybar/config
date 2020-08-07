@@ -130,7 +130,35 @@ font-2 = "Material Icons:size=13;4"
 
 modules-left = bspwm
 modules-right = getStatus
+;==========================================================
+[bar/second_bottom]
+monitor = HDMI1
+width = 100%
+height = 25
+offset-x = 0%
+offset-y = 0%
+bottom = true
+fixed-center = false
+line-size = 2
 
+background = ${color.black}
+foreground = ${color.blue}
+
+border-size = 1
+border-color = ${color.black}
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Fantasque Sans Mono:pixelsize=12;2"
+font-1 = "Material Design Icons:size=13;4"
+font-2 = "Material Icons:size=13;4"
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+modules-left = getStatusBottomLeft r1 r5 r15
+modules-right = getStatusBottom
 ;== Modules ========================================================
 
 [module/bspwm]

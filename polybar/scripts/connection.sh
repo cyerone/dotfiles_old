@@ -10,6 +10,11 @@ pci=`lspci | grep -i wireless | awk '{print $1}'`
 signalF=`lspci -vv -s $pci | grep Status: | awk '{print $3}'`
 signal="${signalF::-4}"
 
+###Connected to:
+ask=`nmcli --ask | grep $wl | sed -n '1p' | cut -d' ' -f4- `
+
+
+
 
 if [ "$ethStatus" == "UP" ]; then
   out="%{F#FFFFFF}%{F-}"
@@ -23,12 +28,12 @@ else
       signalI="襤"
     elif [ "$signal" -lt "80" ]; then
       signalI="嵐"
-    elif [ "$signal" -lt "80" ]; then
+    elif [ "$signal" -lt "90" ]; then
       signalI="爛"
     else
       signalI="冷"
     fi
-    out="%{F#FFFFFF}$signalI%{F-} -$signal""dBm"
+    out="-$signal""dBm%{F#FFFFFF} $signalI%{F-} $ask"
   fi
 fi
 

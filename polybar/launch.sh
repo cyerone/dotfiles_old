@@ -12,4 +12,5 @@ polybar main_bottom -c $HOME/.config/polybar/config >> /tmp/polybar 2>&1 &
 
 if [ "$1" == "2" ]; then
   polybar second -c $HOME/.config/polybar/config >> /tmp/polybar2 2>&1 &
+  polybar second_bottom -c $HOME/.config/polybar/config >> /tmp/polybar2 2>&1 &
 fi
